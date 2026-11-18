@@ -1,0 +1,9 @@
+Options -Indexes
+DirectoryIndex index.php
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^(app|database|scripts|tests|vendor|\.github)(/|$) - [F,L,NC]
+</IfModule>
+<FilesMatch "^(\.env|\.env\.example|composer\.(json|lock)|README\.md|LICENSE|\.gitignore|\.htaccess)$">
+    Require all denied
+</FilesMatch>
